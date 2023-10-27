@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Command Executor</title>
+    <script>      
+        function executeCommand() {
+            const command = 'python3 send.py';
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("output").innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error executing command:', error);
+                document.getElementById("output").innerHTML = 'Error executing command';
+            });
+        }
+        
+        function executeCommand2() {
+            const command = 'python3 get.py';
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("output1").innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error executing command:', error);
+                document.getElementById("output1").innerHTML = 'Error executing command';
+            });
+        }
+        
+        function executeCommand3() {
+            const command = 'python3 work3.py';
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("output2").innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error executing command:', error);
+                document.getElementById("output2").innerHTML = 'Error executing command';
+            });
+        }
+        
+        function executeCommand4() {
+            const command = 'python3 spare.py';
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("output3").innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error executing command:', error);
+                document.getElementById("output3").innerHTML = 'Error executing command';
+            });
+        }
+        
+        function executeCommand5() {
+            const command = 'python3 see.py';
+            fetch('/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: command })
+            })
+            .then(response => response.text())
+            .then(result => {
+                document.getElementById("output4").innerHTML = result;
+            })
+            .catch(error => {
+                console.error('Error executing command:', error);
+                document.getElementById("output4").innerHTML = 'Error executing command';
+            });
+        }
+    </script>
+</head>
+<body>
+    <h1>Command Executor</h1>
+    
+    <h3>Hard  timeout<h3>
+    <hr>
+    <button onclick="executeCommand()">Execute</button>
+    <div id="output"></div>
+
+    <h3>Gets the stream table<h3>
+    <hr>
+    <button onclick="executeCommand2()">Execute</button>
+    <div id="output1"></div>
+
+    <h3>Gets the topo<h3>
+    <hr>
+    <button onclick="executeCommand3()">Execute</button>
+    <div id="output2"></div>
+ 
+    <h3>Vlan<h3>
+    <hr>
+    <button onclick="executeCommand4()">Execute</button>
+    <div id="output3"></div>
+ 
+    <h3>View topology information<h3>
+    <hr>
+    <button onclick="executeCommand5()">Execute</button>
+    <div id="output4"></div>
+</body>
+</html>
+
